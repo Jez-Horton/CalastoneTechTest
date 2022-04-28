@@ -45,7 +45,7 @@ namespace ConsoleApp
 
             foreach (string letter in vowels)
             {
-                if (s.Length % 2 == 1 && (test.ToString() == letter))
+                if (s.Length % 2 == 1 && (test.ToString().ToLower() == letter))
                 {
                     containsVowel = true;
                 }
