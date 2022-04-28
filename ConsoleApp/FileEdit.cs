@@ -12,7 +12,7 @@ namespace ConsoleApp
         StreamReader sr;
         FileOpen fileOpen;
         FileStream stream;
-        public void FilterLetter(List<char> chars = null, bool position = true)
+        public void FilterController()
         {
             fileOpen = new FileOpen();
             try
@@ -36,6 +36,10 @@ namespace ConsoleApp
             {
                 Console.WriteLine(Path.Combine(Directory.GetCurrentDirectory(), "test.txt"));
             }
+        }
+        public void FilterLetter(List<char> chars = null, bool position = true)
+        {
+
         }
         public bool HasLength(string s)
         {

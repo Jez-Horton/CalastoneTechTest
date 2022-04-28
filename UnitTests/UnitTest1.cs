@@ -20,6 +20,8 @@ namespace UnitTests
         [TestClass]
         public class FilterTests
         {
+            FileOpen fileOpen = new FileOpen();
+            StreamEditing streamEdit = new StreamEditing();
             [TestMethod]
             public void FilterVowel()
             {
@@ -38,18 +40,22 @@ namespace UnitTests
             [TestMethod]
             public void FilterWordsLessThanThree()
             {
+                Assert.IsTrue(streamEdit.HasLength("ad"));
             }
             [TestMethod]
             public void FilterWordsMoreThanThree()
             {
+                Assert.IsFalse(streamEdit.HasLength("adasd"));
             }
             [TestMethod]
             public void FilterWordsContainingT()
             {
+                Assert.IsTrue(streamEdit.ContainsLetter("Testing"));
             }
             [TestMethod]
             public void FilterWordsNotContainingT()
             {
+                Assert.IsFalse(streamEdit.ContainsLetter("False"));
             }
         }
     }

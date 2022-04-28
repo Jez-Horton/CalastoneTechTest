@@ -12,7 +12,7 @@ namespace ConsoleApp
         {
             Console.ReadKey();
             StreamEditing streamEditing = new StreamEditing();
-            streamEditing.FilterLetter();
+            streamEditing.FilterController();
             Console.ReadKey();
         }
     }
