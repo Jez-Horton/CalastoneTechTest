@@ -28,7 +28,7 @@ namespace ConsoleApp
 
                     words.RemoveAll(HasLength);
                     words.RemoveAll(ContainsLetter);
-
+                    if(HasVowel("yeare"))
                     Console.WriteLine(words.Aggregate((a, b) => a + " " + b));
                 }
             }
@@ -37,9 +37,23 @@ namespace ConsoleApp
                 Console.WriteLine(Path.Combine(Directory.GetCurrentDirectory(), "test.txt"));
             }
         }
-        public void FilterLetter(List<char> chars = null, bool position = true)
+        public bool HasVowel(string s)
         {
+            List<string> vowels = new List<string> { "a", "e", "i", "o", "u" };
+            foreach (string letter in vowels)
+            {
+                if(s.Length % 2 == 0)
+            }
+            for (int i = 0; i < s.Length / 2; i++)
+            {
+                Console.WriteLine(s[s.Length / 2 + 1]);
+            }
 
+            foreach (string word in vowels)
+            {
+                return (s.ToLower().Contains(word));
+            }
+            return false;
         }
         public bool HasLength(string s)
         {
