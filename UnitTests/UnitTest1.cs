@@ -23,19 +23,24 @@ namespace UnitTests
             FileOpen fileOpen = new FileOpen();
             StreamEditing streamEdit = new StreamEditing();
             [TestMethod]
-            public void FilterVowel()
+            public void FilterFromMiddleEvenFalse()
             {
-                //Open File test with valid input
+                Assert.IsFalse(streamEdit.HasVowel("Mkfd"));
             }
             [TestMethod]
-            public void FilterConsanant()
+            public void FilterFromMiddleOddFalse()
             {
-                //Open File test with invalid input
+                Assert.IsFalse(streamEdit.HasVowel("MKD"));
             }
             [TestMethod]
-            public void FilterFromMiddle()
+            public void FilterFromMiddleEven()
             {
-                //Open File test with valid input
+                Assert.IsTrue(streamEdit.HasVowel("HAFE"));
+            }
+            [TestMethod]
+            public void FilterFromMiddleOdd()
+            {
+                Assert.IsTrue(streamEdit.HasVowel("HAS"));
             }
             [TestMethod]
             public void FilterWordsLessThanThree()
