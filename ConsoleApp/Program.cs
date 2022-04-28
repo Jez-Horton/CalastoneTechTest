@@ -10,7 +10,6 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.ReadKey();
             StreamEditing streamEditing = new StreamEditing();
             streamEditing.FilterController();
             Console.ReadKey();

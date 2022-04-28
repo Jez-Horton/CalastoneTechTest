@@ -31,10 +31,12 @@ namespace ConsoleApp
                     words.RemoveAll(HasVowel);
                     Console.WriteLine(words.Aggregate((a, b) => a + " " + b));
                 }
+
+                stream.Close();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(Path.Combine(Directory.GetCurrentDirectory(), "test.txt"));
+                Console.WriteLine(ex);
             }
         }
         public bool HasVowel(string s)
@@ -42,7 +44,7 @@ namespace ConsoleApp
             char test = s[s.Length / 2];
             bool containsVowel = false;
             List<string> vowels = new List<string> { "a", "e", "i", "o", "u" };
-
+            //Clean up and rework
             foreach (string letter in vowels)
             {
                 if (s.Length % 2 == 1 && (test.ToString().ToLower() == letter))
