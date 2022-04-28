@@ -1,22 +1,21 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using ConsoleApp;
 
 namespace UnitTests
 {
     [TestClass]
     public class UnitTest1
     {
+        FileReading fileReading = new FileReading();
         [TestClass]
         public class FileTests
         {
-
+            FileReading fileReading = new FileReading();
             [TestMethod]
             public void FileStreamFailedName()
             {
-            }
-            [TestMethod]
-            public void FileStreamFailedPath()
-            {
+                Assert.ThrowsException<ArgumentException>(() => fileReading.openFile(""));
             }
         }
         [TestClass]
