@@ -5,17 +5,16 @@ using ConsoleApp;
 namespace UnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest
     {
-        FileReading fileReading = new FileReading();
         [TestClass]
         public class FileTests
         {
-            FileReading fileReading = new FileReading();
+            FileOpen fileOpen = new FileOpen();
             [TestMethod]
             public void FileStreamFailedName()
             {
-                Assert.ThrowsException<ArgumentException>(() => fileReading.openFile(""));
+                Assert.ThrowsException<ArgumentException>(() => fileOpen.openFile(""));
             }
         }
         [TestClass]

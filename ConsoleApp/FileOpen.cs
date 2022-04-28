@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ConsoleApp
 {
-    public class FileReading
+    public class FileOpen
     {
         FileStream stream;
 
