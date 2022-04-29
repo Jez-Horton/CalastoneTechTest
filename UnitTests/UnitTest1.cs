@@ -15,7 +15,7 @@ namespace UnitTests
             [TestMethod]
             public void FileStreamFailedName()
             {
-                Assert.IsTrue(fileOpen.Stream.CanWrite);
+                Assert.IsFalse(fileOpen.Stream.CanWrite);
             }
         }
         [TestClass]
