@@ -15,7 +15,7 @@ namespace ConsoleApp
 
         public StreamEditing()
         {
-            fileOpen = new FileOpen(Path.Combine(Directory.GetCurrentDirectory(), "test.txt"));
+            fileOpen = new FileOpen(Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName).FullName, "test.txt"));
             try
             {
                 stream = fileOpen.Stream;

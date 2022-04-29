@@ -11,11 +11,11 @@ namespace UnitTests
         [TestClass]
         public class FileTests
         {
-            FileOpen fileOpen = new FileOpen(Path.Combine(Directory.GetCurrentDirectory(), "l"));
+            FileOpen fileOpen = new FileOpen(Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName).FullName, "test.txt"));
             [TestMethod]
             public void FileStreamFailedName()
             {
-                Assert.IsFalse(fileOpen.Stream.CanWrite);
+                Assert.IsTrue(fileOpen.Stream.CanWrite);
             }
         }
         [TestClass]
