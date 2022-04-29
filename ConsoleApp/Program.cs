@@ -11,7 +11,7 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             StreamEditing streamEditing = new StreamEditing();
-            streamEditing.FilterController();
+            
             Console.ReadKey();
         }
     }

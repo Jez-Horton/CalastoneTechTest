@@ -12,12 +12,13 @@ namespace ConsoleApp
         StreamReader sr;
         FileOpen fileOpen;
         FileStream stream;
-        public void FilterController()
+
+        public StreamEditing()
         {
-            fileOpen = new FileOpen();
+            fileOpen = new FileOpen(Path.Combine(Directory.GetCurrentDirectory(), "test.txt"));
             try
             {
-                stream = fileOpen.openFile(Path.Combine(Directory.GetCurrentDirectory(), "test.txt"));
+                stream = fileOpen.Stream;
                 sr = new StreamReader(stream, Encoding.UTF8);
 
                 string line = String.Empty;
@@ -47,11 +48,10 @@ namespace ConsoleApp
             //Clean up and rework
             foreach (string letter in vowels)
             {
-                if (s.Length % 2 == 1 && (test.ToString().ToLower() == letter))
-                {
+                if (s.Length % 2 == 1 && (test.ToString().ToLower() == letter)) {
                     containsVowel = true;
-                }
-                else if(s.Length % 2 == 0 && (test.ToString().ToLower() == letter) || (s.Length % 2 == 0 && s[(s.Length / 2) - 1].ToString().ToLower() == letter)){
+                } else if ((s.Length % 2 == 0) && (test.ToString().ToLower() == letter || s.Length % 2 == 0 && s[(s.Length / 2) - 1].ToString().ToLower() == letter))
+                {
                     containsVowel = true;
                 }
             }

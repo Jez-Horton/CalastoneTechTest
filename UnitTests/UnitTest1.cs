@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using ConsoleApp;
+using System.IO;
 
 namespace UnitTests
 {
@@ -10,17 +11,16 @@ namespace UnitTests
         [TestClass]
         public class FileTests
         {
-            FileOpen fileOpen = new FileOpen();
+            FileOpen fileOpen = new FileOpen(Path.Combine(Directory.GetCurrentDirectory(), "l"));
             [TestMethod]
             public void FileStreamFailedName()
             {
-                Assert.ThrowsException<ArgumentException>(() => fileOpen.openFile(""));
+                Assert.IsTrue(fileOpen.Stream.CanWrite);
             }
         }
         [TestClass]
         public class FilterTests
         {
-            FileOpen fileOpen = new FileOpen();
             StreamEditing streamEdit = new StreamEditing();
             [TestMethod]
             public void FilterFromMiddleEvenFalse()
